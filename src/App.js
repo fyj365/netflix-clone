@@ -10,12 +10,11 @@ function App() {
      <Nav/>
      <Banner/>
      <Row title="Trending Now" fetchUrl={requests.getAllTrending} isLargeRow/>
+     <Row title="Now Playing Movies" fetchUrl={requests.getNowPlayingMovies}/>
+     <Row title="Netflix Original" fetchUrl={requests.getNetflixOriginals} />
      <Row title="Popular Movies" fetchUrl={requests.getPopularMovies}/>
      <Row title="TV on The Air" fetchUrl={requests.getTVShows}/>
      <Row title="Top Rated Movies" fetchUrl={requests.getTopRatedMovies}/>
-     <Row title="Now Playing Movies" fetchUrl={requests.getNowPlayingMovies}/>
-     <Row title="Netflix Original" fetchUrl={requests.getNetflixOriginals} />
-
     </div>
   );
 }
