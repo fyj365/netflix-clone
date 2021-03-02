@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+}
+.App{
+  background:#111;
+  color: white;
+}
+h2{
+  padding-left: 30px;
+}
