@@ -1,0 +1,445 @@
+<style> /*for page FAQs */
+.faq-select-wrapper{
+    display: none;
+    margin: 25px auto 20px;
+    width: 260px;
+}
+.faq-answer.fix-margin0 [data-content-type=row][data-appearance=contained]
+{
+    margin:0px !important;
+}
+#faqSelectBox{
+   -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-style: normal;
+    background: #f5f5f5;
+    border-radius: 0;
+    border: none;
+    color: #999;
+    display: block;
+    font-size: 11px;
+    height: 40px;
+    padding: 8px 2px 7px 5px;
+    position: relative;
+    width: 100%;
+}
+.cms-faqs a,.cms-faqs a:active,.cms-faqs:focus{
+  outline:0;
+}
+.cms-faqs main#maincontent{
+  margin-top:-3px;
+}
+.cms-faqs .faq-title h1{
+  color:white;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-navigation{
+    max-width: 1024px;
+    margin: 67px auto 30px;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-navigation li.tab-header{
+  border:none!important;
+  background-color: #ffffff!important;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-navigation li.tab-header.ui-tabs-active.ui-state-active a.tab-title{ 
+    color: #222;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-navigation li:hover a.tab-title{ 
+    text-decoration: underline;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-content{
+ border:none!important;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-content div[data-content-type='divider'] hr{
+ margin-top:0px;
+ margin-bottom:10px;
+} 
+.cms-faqs div[data-content-type='tabs'] .tabs-navigation li.tab-header a.tab-title{
+    color: #999;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space:nowrap;
+}
+.cms-faqs div[data-content-type='tab-item'] .pagebuilder-column{
+    padding:0!important;
+    position: relative;
+}
+.cms-faqs div[data-content-type='tab-item'] .pagebuilder-column-group {
+    flex-wrap: nowrap !important;
+    border-bottom-style: solid !important;
+    border-bottom: 1px solid rgb(206,206,206);
+    margin-bottom: 25px;
+}
+.cms-faqs div[data-content-type='tab-item'] h2{
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 2px;
+    color: #313131;
+    height: 40px;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.cms-faqs .faq-question {
+  cursor: pointer;
+   text-align: left;
+   transition: 0.4s;
+   position: relative;
+    font-weight: 100;
+    font-style: normal;
+    color: #313131;
+    font-size: 22px;
+    line-height: 1;
+    text-transform: initial;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-navigation {
+    margin: 45px auto 30px;
+}
+
+.cms-faqs .faq-expand-container{
+   position:relative
+}
+.cms-faqs .faq-topic-toggle {
+    font-weight: 400;
+    font-style: normal;
+    color: #999;
+    font-size: 12px;
+    letter-spacing: .3px;
+    position: absolute;
+    right: 5px;
+    bottom:5px;
+    cursor:pointer;
+   
+}
+
+.cms-faqs .faq-topic-expand:hover {
+    text-decoration: none;
+}
+.cms-faqs .faq-topic-collapse{
+  display:none;
+}
+/* Style the accordion panel. Note: hidden by default */
+.cms-faqs .faq-answer {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0px;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden;
+   font-family: Times New Roman,"Times New Roman",Times,Baskerville,Georgia,serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 2px!important;
+    margin-right: 70px!important;
+    margin-top: 10px!important;
+}
+.cms-faqs a, .cms-contact-us a{
+   color: #006bb4;
+}
+.cms-faqs a.countrylistBtn{
+    font-weight:600;
+    text-decoration: underline;
+}
+.cms-faqs .goToContactUs .pagebuilder-button-primary,.goToContactUs .pagebuilder-button-primary:hover{
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    font-weight: lighter;
+    padding: 0 35px;
+    line-height: 40px;
+    border: 1px solid #222;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 1px solid #010c5e;
+    background-color: #010c5e;
+    letter-spacing: .5px;
+    padding:0 20px;
+    color: #ffffff;
+
+}
+.cms-faqs .faqMoreQuestions{
+    font-family: Times New Roman,"Times New Roman",Times,Baskerville,Georgia,serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+    font-size: 21px;
+    letter-spacing: .2px;
+    line-height: initial;
+}
+/*add icon*/
+.cms-faqs .faq-question:after{
+  content: '\002B';
+  color: '#777';
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  position: absolute;
+  right: 0px;
+  top: 20%;
+}
+.cms-faqs .faq-question.active:after{
+  content: '\2212';
+}
+.exemptCountries table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, table>tbody>tr>td, table>tfoot>tr>td {
+    padding: 0px 0px;
+}
+table>thead>tr>th, table>tbody>tr>th, table>tfoot>tr>th, table>thead>tr>td, table>tbody>tr>td, table>tfoot>tr>td {
+    padding: 5px 5px;
+    text-align: left;
+}
+
+
+.faqs-size-guide tr:nth-child(even) {background: #fff;}
+.faqs-size-guide tr:nth-child(odd) {background: #CCC;}
+
+@media (max-width:767px){
+.cms-faqs .faq-title h1{
+   font-size:25px;
+}
+
+.exemptCountries{
+    max-height: 500px;
+    overflow-y: scroll;
+}
+.cms-faqs div[data-content-type="tab-item"]{
+   padding:15px!important;
+}
+.cms-faqs div[data-content-type="tab-item"] h2{
+    font-size: 18px;
+    height: 37px;
+    letter-spacing: .8px;
+    line-height: 42px;
+    white-space: nowrap;
+}
+.cms-faqs .faq-question {
+    font-size: 15px;
+    letter-spacing: .5px;
+    margin-right: 15px;
+    line-height:1.5;
+    
+ }
+.cms-faqs .faq-answer{
+   margin-right:25px!important;
+   overflow-x:auto;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-content div[data-content-type='divider'] hr{
+  margin-bottom:0;
+}
+.cms-faqs div[data-content-type='tabs'] .tabs-navigation{
+ display:none;
+}
+.faq-select-wrapper{
+  display:block;
+}
+}
+.tabs-navigation > span{
+    z-index: 1;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+}
+.tabs-navigation > span a{
+    color: #999;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-right: 0;
+    cursor: pointer !important;
+    display: block;
+    position: relative;
+    transition: all .3s;
+    vertical-align: middle;
+}
+</style>
+
+<script>
+var acc = document.getElementsByClassName("faq-question");
+var i,j,x;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if(panel.style.maxHeight == '0px' ||panel.style.maxHeight == 0){
+       panel.style.maxHeight = panel.scrollHeight + 'px';
+    }else{
+       panel.style.maxHeight = '0px';
+    }
+  });
+}
+var expand_btns = document.getElementsByClassName('faq-topic-expand');
+for(let expand_btn of expand_btns){
+    expand_btn.addEventListener("click", function(){
+        this.style.display = "none";
+    var collapse_btn = this.nextElementSibling;
+        collapse_btn.style.display = "block";
+    var topic = this.closest("div[data-content-type='tab-item']");
+    var topic_questions = topic.getElementsByClassName('faq-question');
+    var topic_answers = topic.getElementsByClassName('faq-answer');
+    for (let topic_question of topic_questions){
+        if(!topic_question.classList.contains("active")){
+            topic_question.className += " active";
+         }
+    }
+    for (j = 0; j< topic_answers.length; j++){
+     if(topic_answers[j].style.maxHeight == '0px'||topic_answers[j].style.maxHeight == 0){
+      topic_answers[j].style.maxHeight = topic_answers[j].scrollHeight + 'px';
+     }
+   }
+  });
+}
+var collapse_btns = document.getElementsByClassName('faq-topic-collapse');
+for(let collapse_btn of collapse_btns){
+    collapse_btn.addEventListener("click", function(){
+    console.log(this);
+    var expand_btn = this.previousElementSibling;
+    console.log(expand_btn);
+        this.style.display = "none";
+        expand_btn.style.display = "block";
+    var topic = this.closest("div[data-content-type='tab-item']");
+    var expanded_answers = topic.getElementsByClassName('faq-answer');
+    var expanded_questions = topic.getElementsByClassName('faq-question');
+    for(let expanded_question of expanded_questions){
+       if(expanded_question.classList.contains("active")){
+         expanded_question.classList.remove("active");
+       }
+    }
+    for (x = 0; x < expanded_answers.length; x++){
+     if(expanded_answers[x].style.maxHeight != '0px' ){
+       expanded_answers[x].style.maxHeight = '0px';
+     }
+   }
+ });
+}
+ 
+ var mobileSelectBox = document.getElementById('faqSelectBox');
+ var selectOptions ='';
+ var tab_headers = document.querySelectorAll('a.tab-title');
+ for(let tab_header of tab_headers){
+   var title = tab_header.querySelectorAll('span.tab-title')[0].innerHTML;
+   var linkTo = tab_header.getAttribute('href');
+   selectOptions +=  '<option ' + 'value="' + linkTo + '">' + title + '</option>';
+ }
+ console.log(selectOptions);
+ mobileSelectBox.innerHTML = selectOptions;
+
+var all_tab_items = document.querySelectorAll('div[data-content-type="tab-item"]');
+
+mobileSelectBox.addEventListener('change', function(){
+
+  for(let items of all_tab_items){
+   if(items.style.display = "flex"){
+      items.style.display = "none";
+      items.setAttribute("aria-expanded", false);
+      items.setAttribute("aria-hidden", true);
+   }
+  }
+ var selected_item = document.querySelectorAll(this.value);
+  //console.log(selected_item);
+ selected_item[0].style.display = 'flex';
+
+});
+
+  require(['jquery','fancybox'],
+    function($){
+      $('.exemptCountries').hide();
+      $('.exemptCountries').attr("id","countrylistwrapper");
+      $('.fancybox').fancybox();
+      var contact_us_dictionary = {
+      'en': 'CONTACT US',
+      'it': 'CONTATTI',
+      'fr': 'CONTACTEZ-NOUS',
+      'jp': 'お問い合わせ',
+      'tc': '聯絡我們',
+      'sc': '联系我们',
+      'es': 'CONTACTO',
+      'de': 'KONTAKT'
+     };
+      var locale_code = QUICKVIEW_BASE_URL.slice(-3,-1);
+     $('.tabs-navigation').append('<span><a href="'+ QUICKVIEW_BASE_URL +'contact-us' + '" target="_blank" class="tab-header">'+contact_us_dictionary[locale_code]+'</a></span>');
+
+ })
+
+var selectedTabIndex = 0;
+require([
+    'jquery',
+    'mage/backend/tabs'], function ($) {
+
+        $('.liveChatBtn').click(function(){
+         if($('#inside_liveChatTab').length >0){
+            $('#inside_liveChatTab').click();
+           }else{
+            alert("Sorry. LIVE CHAT UNAVAILABLE");
+           }
+        });
+
+        function _genTabsSetValue(exceptionalValue) {
+            var mobileSelectBox = document.getElementById('faqSelectBox');
+            var tabsCounter = mobileSelectBox.childElementCount;
+            var bufferSet = new Set();
+            for (var i = 0; i < tabsCounter; i++) {
+                if (i !== exceptionalValue) { bufferSet.add(i); }
+                
+            }
+            return bufferSet;
+        };
+        function _getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        function _selectTab(index, totalTabsNumInArray,question) {
+            $('.Contact-Us-tab').tabs({
+                active: index,
+                disabled: totalTabsNumInArray.delete(index),
+            });
+
+        };
+  
+        function _init() {
+            tabsNameList = [];
+            tabsCounter = 0;
+        };
+        function kickstart(selectedTab, question) {
+            _init();
+            var tabsSets = _genTabsSetValue(selectedTab);
+            _selectTab(selectedTab, tabsSets, question);
+            setTimeout(function() {
+                _selectTab(selectedTab, tabsSets, question);
+                if (question!="") {
+                     $(".Contact-Us-tab").find(".ui-tabs-panel").eq(selectedTab).find('.faq-question').eq(question).click();
+                }
+            }, 2500);
+             setTimeout(function() {
+                _selectTab(selectedTab, tabsSets, question);
+            }, 3500);
+        }
+        var tabs = parseInt(_getUrlParameter('tabs'), 10);
+        var question = parseInt(_getUrlParameter('q'), 10);
+ 
+
+        kickstart( isNaN(tabs) ? 0 : tabs, isNaN(question) ? "" : question );
+
+
+    }
+);
+
+</script>

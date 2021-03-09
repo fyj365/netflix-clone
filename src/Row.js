@@ -24,7 +24,6 @@ function Row({title, fetchUrl, isLargeRow}) {
         }
         fetchData();
     }, [fetchUrl]);
-    console.log(movies);
     const handleClick = (movie) => {
         console.log(movie);
         if(trailerUrl) {
