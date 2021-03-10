@@ -2,9 +2,15 @@
   margin: 0;
 }
 .App{
-  background:#111;
-  color: white;
+  /* background:#111;
+  color: white; */
+
 }
 h2{
   padding-left: 30px;
+}
+.container{
+  width: 100vw;
+  /* background: url("https://assets.nflxext.com/ffe/siteui/vlv3/70deccb9-9b6c-4be1-b781-18dd1bcd9264/8674b58c-2e31-461d-bfe7-a788f6360d14/HK-en-20210301-popsignuptwoweeks-perspective_alpha_website_small.jpg"); */
+  height:  100vh;
 }

@@ -4,7 +4,7 @@ import styles from './RegisterForm.module.less';
 
 const RegisterForm = () => (
   <div className={styles.RegisterForm}>
-RegisterForm
+    RegisterForm
   </div>
 );
 

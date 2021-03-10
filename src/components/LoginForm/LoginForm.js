@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './LoginForm.module.less';
 import axios from "axios";
 
@@ -23,7 +22,7 @@ class LoginForm extends React.Component {
     .then(function (response) {
       if(response.status == 200){
       console.log("Login successfull");
-      window.location.href = 'http://localhost:8889/';
+      window.location.href = 'http://localhost:8890/browse';
       }
       else if(response.status == 204){
       console.log("Username password do not match");
@@ -37,7 +36,7 @@ class LoginForm extends React.Component {
     .catch(function (error) {
       console.log(error);
     });
-    }
+  }
   render() {
     return (
       <form onSubmit={this.handleSubmit}>

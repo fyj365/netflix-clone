@@ -7,7 +7,9 @@ import LandNav from './components/LandNav/LandNav';
 function App() {
   return (
     <div className="App">
-    <LandNav/>
+      <div className="container">
+      <LandNav/>
+      </div>
      {/* <Nav/>
      <Banner/>
      <Row title="Trending Now" fetchUrl={requests.getAllTrending} isLargeRow/>
